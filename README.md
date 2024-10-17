@@ -1,6 +1,6 @@
 # TEAM-FALL2024-SQA
 
-Jenna - 1
-Ruisong - 2
-Mary Ann - 3
-Gabriella - 4
+Jenna Chiarella - 1
+Ruisong Li - 2
+Mary Ann Hollinghead - 3
+Gabriella Hawkes - 4
