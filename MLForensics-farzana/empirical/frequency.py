@@ -89,6 +89,11 @@ if __name__=='__main__':
     print('*'*100 )
 
 
+    # Set to empty string for linter
+    RESULTS_FILE = ""
+    PROPORTION_FILE = ""
+    DENSITY_FILE = ""
+
     # DATASET_NAME = 'TEST'
     # RESULTS_FILE = '/Users/arahman/Documents/OneDriveWingUp/OneDrive-TennesseeTechUniversity/Research/VulnStrategyMining/ForensicsinML/Output/V5_OUTPUT_TEST.csv'
 

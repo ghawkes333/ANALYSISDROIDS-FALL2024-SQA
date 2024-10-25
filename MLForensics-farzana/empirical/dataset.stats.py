@@ -116,6 +116,8 @@ def getAllCommits(all_repos):
         tracker += 1 
         branchName = getBranch(repo_) 
         print(tracker, repo_)  
+        # Added for linter
+        the_tuple = None
         print(the_tuple) 
         dev_cnt, com_cnt, _days = getDevDayCommits(repo_, branchName)  
         per_repo_min_day        = min(_days) 
