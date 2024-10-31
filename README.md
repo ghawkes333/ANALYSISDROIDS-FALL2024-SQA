@@ -1,4 +1,4 @@
-# TEAM-FALL2024-SQA
+# ANALYSIS DROIDS-FALL2024-SQA
 
 Jenna Chiarella - 1
 Ruisong Li - 2
