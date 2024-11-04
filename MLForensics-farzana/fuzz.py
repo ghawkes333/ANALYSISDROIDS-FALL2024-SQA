@@ -1,52 +1,68 @@
-import atheris
-import sys
+import json
+import datetime
+import re
+import math
+import random
+import string
 
-def fuzz_function_one(data):
+def fuzz_json_loads():
     try:
-        # Fuzz function example
-        eval(data)
+        # Randomly generate a JSON-like string
+        random_string = ''.join(random.choices(string.printable, k=20))
+        json.loads(random_string)
+    except json.JSONDecodeError:
+        pass  # Expected for malformed JSON
     except Exception as e:
-        print(f"Error in function one: {e}")
+        print("Unexpected error in json.loads:", e)
 
-def fuzz_function_two(data):
+def fuzz_datetime_strptime():
     try:
-        # Fuzz function example
-        int(data)
+        # Randomly generate a date string
+        random_date_str = ''.join(random.choices(string.printable, k=10))
+        datetime.datetime.strptime(random_date_str, "%Y-%m-%d")
+    except ValueError:
+        pass  # Expected for malformed dates
     except Exception as e:
-        print(f"Error in function two: {e}")
+        print("Unexpected error in datetime.strptime:", e)
 
-def fuzz_function_three(data):
+def fuzz_re_match():
     try:
-        # Fuzz function example
-        open(data, 'r')
+        # Randomly generate a regex pattern and a string to match
+        random_pattern = ''.join(random.choices(string.printable, k=5))
+        random_string = ''.join(random.choices(string.printable, k=10))
+        re.match(random_pattern, random_string)
+    except re.error:
+        pass  # Expected for malformed regex
     except Exception as e:
-        print(f"Error in function three: {e}")
+        print("Unexpected error in re.match:", e)
 
-def fuzz_function_four(data):
+def fuzz_math_sqrt():
     try:
-        # Fuzz function example
-        float(data)
+        # Randomly choose a number, which might be negative
+        random_number = random.uniform(-100, 100)
+        math.sqrt(random_number)
+    except ValueError:
+        pass  # Expected for negative numbers
     except Exception as e:
-        print(f"Error in function four: {e}")
+        print("Unexpected error in math.sqrt:", e)
 
-def fuzz_function_five(data):
+def fuzz_random_choice():
     try:
-        # Fuzz function example
-        compile(data, '<string>', 'exec')
+        # Randomly generate a list with varying lengths (including empty)
+        random_list = [random.choice(string.printable) for _ in range(random.randint(0, 10))]
+        random.choice(random_list)
+    except IndexError:
+        pass  # Expected for empty list
     except Exception as e:
-        print(f"Error in function five: {e}")
-
-def test_one_input(data):
-    fdp = atheris.FuzzedDataProvider(data)
-    fuzz_function_one(fdp.ConsumeUnicodeNoSurrogates(100))
-    fuzz_function_two(fdp.ConsumeBytes(100))
-    fuzz_function_three(fdp.ConsumeUnicodeNoSurrogates(100))
-    fuzz_function_four(fdp.ConsumeBytes(100))
-    fuzz_function_five(fdp.ConsumeUnicodeNoSurrogates(100))
+        print("Unexpected error in random.choice:", e)
 
 def main():
-    atheris.Setup(sys.argv, test_one_input)
-    atheris.Fuzz()
+    for _ in range(100):  # Fuzz each method 100 times
+        fuzz_json_loads()
+        fuzz_datetime_strptime()
+        fuzz_re_match()
+        fuzz_math_sqrt()
+        fuzz_random_choice()
 
 if __name__ == "__main__":
     main()
