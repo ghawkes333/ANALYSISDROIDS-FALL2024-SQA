@@ -1,12 +1,13 @@
-name: Python Fuzz Testing
+name: Fuzz Testing
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  fuzz_test:
+  fuzz:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,9 +15,5 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
-      - name: Install dependencies
-        run: |
-          pip install atheris
       - name: Run Fuzz Tests
-        run: |
-          python fuzz.py
+        run: python fuzz.py
