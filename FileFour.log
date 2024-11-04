@@ -1,0 +1,2 @@
+2024-10-28 08:19:23,442 - INFO - Divide operation performed: 10 / 2 = 5.0. This logs the result of dividing two numbers.
+2024-10-28 08:19:23,442 - WARNING - Attempted to divide by zero. Division by zero is not allowed.
