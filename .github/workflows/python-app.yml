@@ -47,4 +47,4 @@ jobs:
         with:
           python-version: '3.x'
       - name: Run Fuzz Tests
-        run: python fuzz.py
+        run: python MLForensics-farzana/fuzz.py
