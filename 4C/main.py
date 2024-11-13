@@ -129,7 +129,7 @@ def getDevDayCount(full_path_to_repo, branchName='master', explore=1000):
     try:
         min_day = min(all_day_list) 
         max_day = max(all_day_list) 
-        ds_life_days = days_between(min_day, max_day)
+        ds_life_days = (min_day - max_day).days
 	#Repo life span 
         logging.info("Repo life span: {} days.".format(ds_life_days))
     #set error as e
