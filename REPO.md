@@ -6,7 +6,7 @@ The activity I completed was 4.a, create a Git Hook that will run and report all
 Ruisong Li - 4b - Fuzzing. The activity I completed was 4.b. I created a fuzz.py file that would automatically fuzz test 5 Python methods chosen by our group. In this activity, I had to combine the knowledge from workshop 11, and I learned how to use the content of this workshop and its course.
 
 
-Mary Ann Hollinghead - Forensics
+Mary Ann Hollinghead - Forensics. I completed the 4.c, the Integrated Forensics. I used the main.py file given within the project files and implemented logging. Once implemented I created a test log file to test the logs I implemented and ran the logging test file. I took screenshots and wrote a proper report and placed it on our group github labeled, GroupProject_Report_4c.pdf.  
 
 
 Gabriella Hawkes - Github Actions
