@@ -10,3 +10,5 @@ Mary Ann Hollinghead - Forensics. I completed the 4.c, the Integrated Forensics.
 
 
 Gabriella Hawkes - Github Actions
+
+I wrote YML scripts that define tasks that the GitHub Actions runs. I learned how to write YML files and automatically run the scripts via GitHub Actions. I learned that GitHub Actions includes numerous templates for YML files that are easy to plug in. The GitHub Actions in the repo compiles, lints, and fuzzes the project files. 
